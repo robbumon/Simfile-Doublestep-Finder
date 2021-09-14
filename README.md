@@ -1,6 +1,12 @@
 # Simfile-Doublestep-Finder
 Specifically for stamina charts, this looks for accidental doublesteps created in streams/breaks.
 
+Note: I use the library simfile for Python 3 which is absolutely awesome to work with.
+
+https://simfile.readthedocs.io/en/latest/index.html
+
+`pip3 install simfile` 
+
 When you play the latest version of Simply Love, each chart comes with a handy "crossovers" and "footswitch" counter.
 This is helpful to determine if your stamina chart, which traditionally will never have these patterns, has these mistakes.
 
