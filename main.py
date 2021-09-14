@@ -6,7 +6,8 @@
 # TODO:
 #   More granular with jump and foot landing
 
-
+import tkinter as tk
+from tkinter import filedialog
 import simfile
 from simfile.notes import NoteType, NoteData
 from simfile.timing import Beat
@@ -15,6 +16,12 @@ from simfile.notes.count import *
 
 feet = ('L', 'R', '?')
 arrows = ('L', 'D', 'U', 'R', 'J')
+
+def get_folder_dialog():
+    root = tk.Tk()
+    root.withdraw()
+    file_path = filedialog.askopenfilename(filetypes=(('sm files','*.sm'),('ssc fles','*.ssc')))
+    return file_path
 
 class mynote:
     def __init__(self, type, arrow, foot, doublestep, jack, beat):
@@ -30,11 +37,14 @@ currentnote = mynote('tap', 4, 2, False, False, 0)
 prevnote = mynote('tap', 4, 2, False, False, 0)
 
 # load simfile
-# opensimfile = simfile.open('/Users/rfnic/Documents/ArrowVortex 2017-02-25/Songs/WIP/Fly Me To The Moon/Fly Me To The Moon 156.sm')
-opensimfile = simfile.open('/Users/rfnic/Documents/ArrowVortex 2017-02-25/Songs/Sick Music Pending/Sick Music for Stamina - Full/Sick Music for Stamina - Full mix.sm')
+file_path = get_folder_dialog()
+opensimfile = simfile.open(file_path)
 chart = opensimfile.charts[0]
 note_data = NoteData(chart)
 
+print('Path: ' + file_path)
+print('Title: ' + opensimfile.title)
+print('Doublestep analysis')
 
 # Get note data with jumps grouped together
 note_data = NoteData(chart)
