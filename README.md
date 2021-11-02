@@ -15,7 +15,5 @@ So I was tired of looking through a marathon chart for accidental doublesteps an
 It's not perfect and gets hung up on some jump sections. In fact, if there are jumps in the break, I count them as "ambiguous" and following steps can't be marked as doublesteps. I think that's fair.
 
 To do:
- - Make file picker to select simfile
- - Make chart selector from within file
  - Add step statistics for stamina breakdown
  - Reinvent the wheel a third time
